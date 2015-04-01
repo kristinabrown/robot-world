@@ -56,4 +56,12 @@ robots:
   birthdate: 1994-01-19
   date_hired: 2015-04-06
   department: District Directives Director
-total: 7
+- id: 8
+  name: wall-e
+  avatar: http://robohash.org/wall-e.png?size=300x300
+  city: North Jewell
+  state: WV
+  birthdate: 1997-04-26
+  date_hired: 2015-04-03
+  department: Lead Interactions Manager
+total: 8
