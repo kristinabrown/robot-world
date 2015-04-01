@@ -1,6 +1,6 @@
 ---
 robots:
-- id: 3
+- id: 1
   name: kristina
   avatar: http://robohash.org/kristina.png?size=300x300
   city: New Sylvanstad
@@ -8,7 +8,7 @@ robots:
   birthdate: '2011-01-17'
   date_hired: '2015-04-07'
   department: Central Metrics Coordinator
-- id: 4
+- id: 2
   name: milli
   avatar: http://robohash.org/milli.png?size=300x300
   city: East Kylee
@@ -16,7 +16,7 @@ robots:
   birthdate: 2009-03-07
   date_hired: 2015-04-09
   department: Human Solutions Designer
-- id: 5
+- id: 3
   name: ryan
   avatar: http://robohash.org/ryan.png?size=300x300
   city: South Alessandra
@@ -24,7 +24,7 @@ robots:
   birthdate: 1990-10-05
   date_hired: 2015-04-01
   department: Principal Optimization Associate
-- id: 6
+- id: 4
   name: scott
   avatar: http://robohash.org/scott.png?size=300x300
   city: North Frederique
@@ -32,7 +32,7 @@ robots:
   birthdate: 1995-08-26
   date_hired: 2015-04-02
   department: Legacy Security Representative
-- id: 8
+- id: 5
   name: blithe
   avatar: http://robohash.org/blithe.png?size=300x300
   city: West Jarrethaven
@@ -40,4 +40,20 @@ robots:
   birthdate: 2001-11-27
   date_hired: 2015-04-04
   department: Direct Group Representative
-total: 8
+- id: 6
+  name: robot
+  avatar: http://robohash.org/robot.png?size=300x300
+  city: Lake Devantebury
+  state: FL
+  birthdate: 1999-08-25
+  date_hired: 2015-04-08
+  department: Investor Response Facilitator
+- id: 7
+  name: alf
+  avatar: http://robohash.org/alf.png?size=300x300
+  city: Strackestad
+  state: NJ
+  birthdate: 1994-01-19
+  date_hired: 2015-04-06
+  department: District Directives Director
+total: 7

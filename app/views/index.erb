@@ -1,11 +1,30 @@
-<h1>Robots</h1>
+<body id="index-body">
+<a href="/"><button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-hand-left" aria-hidden="true"> Home</a></span>
+</button>
+
+<h1 class="jumbotron text-center" id="index-header">Robots</h1>
 
 <% @robots.each do |robot| %>
-  <h3><%= robot.id %>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
-  <img src="<%= robot.avatar %>" alt="robot selfie"/>
-  <a href="/robots/<%= robot.id %>/edit">Edit</a>
-  <form action="/robots/<%= robot.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE"/>
-    <input type="submit" value="delete"/>
-  </form>
+<div class="container" id="robot-instance">
+<div class="row" id="robot-name">
+  <h1><a href="/robots/<%= robot.id %>" id="name-link"><%= robot.name %></a></h1>
+</div>
+
+<div class="row">
+  <img src="<%= robot.avatar %>" alt="robot selfie" id="robot-image"/>
+</div>
+    
+<div class="row">
+  <p>
+    <a class="btn btn-info btn-md" href="/robots/<%= robot.id %>/edit" role="button">Edit</a>
+    <form action="/robots/<%= robot.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE"/>
+      <input class="btn btn-danger btn-md" type="submit" value="Delete" role="button"/>
+    </form>
+  </p>
+</div>
+</div>
+
 <% end %>
+</body>

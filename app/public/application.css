@@ -1,0 +1,79 @@
+#main-body {
+  padding-bottom: 70px;
+  background-image: url("img/robotworld.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#main-header {
+  margin-top: 15px;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color:silver;
+  background-image: 
+  radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+  background-size:100px 50px;
+  font-family: 'Signika', sans-serif;
+  color: #9b3982;
+}
+
+#welcomer {
+  font-size: 4.3em;
+  font-weight: bold;
+}
+
+#index-body {
+  background-color: #e285a1;
+  padding: 20px;
+  padding-bottom: 70px;
+}
+
+#robot-name{
+  background-color: #64c1ca;
+  width: 40%;
+  padding: 20px;
+  border-radius: 25px;  
+}
+
+#name-link{
+  color: white;
+  font-size: 1.3em;
+  transition: all .5s linear 0;
+}
+
+#name-link:hover{
+  padding: 7px;
+  background-color: #ece643;
+  border-radius: 25px;
+  color: #311da4;
+}
+
+#index-header {
+  width: 45%;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+#robot-image {
+  width: 35%;
+}
+
+#robot-instance{
+  padding: 30px;
+  margin: 15px;
+  border: 3px solid black;
+  background-color:#b8b7ba;
+background-image: 
+radial-gradient(circle at 100% 150%, #b8b7ba 24%, white 25%, white 28%, #b8b7ba 29%, #b8b7ba 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 0    150%, #b8b7ba 24%, white 25%, white 28%, #b8b7ba 29%, #b8b7ba 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 50%  100%, white 10%, #b8b7ba 11%, #b8b7ba 23%, white 24%, white 30%, #b8b7ba 31%, #b8b7ba 43%, white 44%, white 50%, #b8b7ba 51%, #b8b7ba 63%, white 64%, white 71%, transparent 71%, transparent),
+radial-gradient(circle at 100% 50%, white 5%, #b8b7ba 6%, #b8b7ba 15%, white 16%, white 20%, #b8b7ba 21%, #b8b7ba 30%, white 31%, white 35%, #b8b7ba 36%, #b8b7ba 45%, white 46%, white 49%, transparent 50%, transparent),
+radial-gradient(circle at 0    50%, white 5%, #b8b7ba 6%, #b8b7ba 15%, white 16%, white 20%, #b8b7ba 21%, #b8b7ba 30%, white 31%, white 35%, #b8b7ba 36%, #b8b7ba 45%, white 46%, white 49%, transparent 50%, transparent);
+background-size:100px 50px;
+}
