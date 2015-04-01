@@ -1,0 +1,43 @@
+---
+robots:
+- id: 3
+  name: kristina
+  avatar: http://robohash.org/kristina.png?size=300x300
+  city: New Sylvanstad
+  state: VA
+  birthdate: '2011-01-17'
+  date_hired: '2015-04-07'
+  department: Central Metrics Coordinator
+- id: 4
+  name: milli
+  avatar: http://robohash.org/milli.png?size=300x300
+  city: East Kylee
+  state: IN
+  birthdate: 2009-03-07
+  date_hired: 2015-04-09
+  department: Human Solutions Designer
+- id: 5
+  name: ryan
+  avatar: http://robohash.org/ryan.png?size=300x300
+  city: South Alessandra
+  state: MA
+  birthdate: 1990-10-05
+  date_hired: 2015-04-01
+  department: Principal Optimization Associate
+- id: 6
+  name: scott
+  avatar: http://robohash.org/scott.png?size=300x300
+  city: North Frederique
+  state: LA
+  birthdate: 1995-08-26
+  date_hired: 2015-04-02
+  department: Legacy Security Representative
+- id: 8
+  name: blithe
+  avatar: http://robohash.org/blithe.png?size=300x300
+  city: West Jarrethaven
+  state: VA
+  birthdate: 2001-11-27
+  date_hired: 2015-04-04
+  department: Direct Group Representative
+total: 8
