@@ -1,8 +1,25 @@
 #main-body {
   padding-bottom: 70px;
   background-image: url("img/robotworld.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
+  padding-top: 20px;
+}
+
+#name-space {
+  /*width: 50%;*/
+}
+
+#enter-name {
+  background-color: #395dad;
+  color: white;
+  width: 250px;
+  border-radius: 25px;
+  padding: 7px;
+}
+
+#robot-coloumn {
+  margin: 5px;
 }
 
 #main-header {
@@ -21,6 +38,7 @@
   font-family: 'Press Start 2P', cursive;
   /*font-family: 'Signika', sans-serif;*/
   color: #9b3982;
+  padding: .8em;
 }
 
 #welcomer {
@@ -37,9 +55,11 @@
 
 #robot-name{
   background-color: #64c1ca;
-  width: 40%;
-  padding: 20px;
-  border-radius: 25px;  
+  width: 60%;
+  padding: 10px;
+  border-radius: 25px; 
+  margin-right: auto;
+  margin-left: auto; 
 }
 
 #name-link{
@@ -66,10 +86,15 @@
 }
 
 #robot-image {
-  width: 35%;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 10px;
+  
 }
 
 #robot-instance{
+  width: 100%;
   padding: 30px;
   margin: 15px;
   border: 3px solid black;

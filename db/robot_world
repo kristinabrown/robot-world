@@ -64,4 +64,12 @@ robots:
   birthdate: 1997-04-26
   date_hired: 2015-04-03
   department: Lead Interactions Manager
-total: 8
+- id: 9
+  name: paul
+  avatar: http://robohash.org/paul.png?size=300x300
+  city: New Lavernville
+  state: IA
+  birthdate: 2009-01-30
+  date_hired: 2015-04-09
+  department: Future Web Associate
+total: 9
