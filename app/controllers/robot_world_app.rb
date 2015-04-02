@@ -1,6 +1,7 @@
 class RobotWorldApp < Sinatra::Base
     
   get "/" do
+    @population = RobotMaker.population
     erb :dashboard
   end
   

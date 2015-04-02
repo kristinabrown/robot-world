@@ -3,6 +3,7 @@ Bundler.require
 
 # set the pathname for the root of the app
 require 'pathname'
+require 'tilt/erb'
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 # require the controller(s)

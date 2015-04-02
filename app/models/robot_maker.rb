@@ -58,6 +58,10 @@ class RobotMaker
     end
   end
   
+  def self.population
+    raw_robots.count
+  end
+  
   def self.destroy(id)
     database.transaction do
       database['robots'].delete_if { |robot| robot["id"] == id }
