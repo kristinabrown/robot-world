@@ -1,77 +1,90 @@
 require 'yaml/store'
+require 'sequel'
+require 'byebug'
 
 class RobotMaker
   
   def self.database
     if ENV["ROBOT_MAKER_ENV"] == 'test'
-      @database ||= YAML::Store.new("db/robot_maker_test")
+      @database ||= Sequel.sqlite("db/robot_maker_test.sqlite3")
     else
-      @database ||= YAML::Store.new("db/robot_world")
+      @database ||= Sequel.sqlite("db/robot_maker_development.sqlite3")
     end
+  end
+  
+  def self.dataset
+    database.from(:robots)
   end
 
   def self.create(robot)
-    database.transaction do
-      database['robots'] ||= []
-      database['total'] ||= 0
-      database['total'] += 1
-      database['robots'] << { "id" => database['total'], 
-                              "name" => robot[:name],
-                              "avatar" => Faker::Avatar.image("#{robot[:name]}"),
-                              "city" => Faker::Address.city, 
-                              "state" => Faker::Address.state_abbr, 
-                              "birthdate" => Faker::Date.backward(10950), 
-                              "date_hired" => Faker::Date.forward(10),
-                              "department" => Faker::Name.title                       
-      }
-    end
-  end
-
-  def self.raw_robots
-    database.transaction do
-      database['robots'] || []
-    end
+    dataset.insert({ name: robot[:name],
+                     avatar: Faker::Avatar.image("#{robot[:name]}"),
+                     city: Faker::Address.city, 
+                     state: Faker::Address.state_abbr, 
+                     birthdate: Faker::Date.backward(10950), 
+                     date_hired: Faker::Date.forward(10),
+                     department: Faker::Name.title,
+                     salary: Robot.salary,
+                     mood: Robot.mood,
+                     fav_food: Robot.fav_food
+                  })
   end
 
   def self.all
-    raw_robots.map { |data| Robot.new(data) }
-  end
-
-  def self.raw_robot(id)
-    raw_robots.find { |robot| robot["id"] == id }
+    dataset.all.map do |raw_robot|  
+      Robot.new(raw_robot)
+    end
   end
 
   def self.find(id)
-    Robot.new(raw_robot(id))
+    Robot.new(dataset.where(id: id).to_a.first)
   end
   
   def self.update(id, robot)
-    database.transaction do
-      target = database['robots'].find { |data| data["id"] == id }
-      target["name"] = robot[:name]
-      target["avatar"] = robot[:avatar]
-      target["city"] = robot[:city]
-      target["state"] = robot[:state]
-      target["birthdate"] = robot[:birthdate]
-      target["date_hired"] = robot[:date_hired]
-      target["department"] = robot[:department]
-    end
+    dataset.where(id: id).update({
+                                            name: robot[:name],
+                                            avatar: robot[:avatar],
+                                            city: robot[:city],
+                                            state: robot[:state],
+                                            birthdate: robot[:birthdate],
+                                            date_hired: robot[:date_hired],
+                                            department: robot[:department],
+                                            salary: robot[:salary],
+                                            mood: robot[:mood],
+                                            fav_food: robot[:fav_food]
+                                           })
   end
   
   def self.population
-    raw_robots.count
+    dataset.all.count
   end
   
   def self.destroy(id)
-    database.transaction do
-      database['robots'].delete_if { |robot| robot["id"] == id }
+    dataset.where(id: id).delete
+  end
+  
+  def self.most_common_mood
+    moods = dataset.all.group_by do |robot|
+      robot[:mood]
     end
+    moods.max_by { |key, value| value.count }.first
+  end
+  
+  def self.most_fav_food
+    foods = dataset.all.group_by do |robot|
+      robot[:fav_food]
+    end
+    foods.max_by { |key, value| value.count }.first
+  end
+  
+  def self.average_salary
+    total = dataset.all.reduce(0) do |sum, robot|
+      sum + robot[:salary].to_i
+    end
+    total / dataset.all.count
   end
   
   def self.delete_all
-    database.transaction do
-      database['robots'] = []
-      database['total'] = 0
-    end
+    dataset.delete
   end
 end

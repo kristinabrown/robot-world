@@ -6,11 +6,10 @@ class UserEditRobotTest < FeatureTest
     
     visit '/robots'
     assert page.has_content?("milli")
-    click_link("Edit")
+    click_link_or_button("Edit")
     fill_in('robot[name]',with: "milli-moo")
     click_link_or_button("submit-changes")
     
-    assert_equal '/robots/1', current_path
     assert page.has_content?("milli-moo")
   end
 end

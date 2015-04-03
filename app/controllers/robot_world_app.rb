@@ -2,6 +2,9 @@ class RobotWorldApp < Sinatra::Base
     
   get "/" do
     @population = RobotMaker.population
+    @mood = RobotMaker.most_common_mood
+    @favorite_food = RobotMaker.most_fav_food
+    @average_salary = RobotMaker.average_salary
     erb :dashboard
   end
   
