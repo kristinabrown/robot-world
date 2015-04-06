@@ -67,21 +67,23 @@ class RobotMaker
     moods = dataset.all.group_by do |robot|
       robot[:mood]
     end
-    moods.max_by { |key, value| value.count }.first
+    most_mood = moods.max_by { |key, value| value.count }
+    most_mood.nil? ? [] : most_mood.first
   end
   
   def self.most_fav_food
     foods = dataset.all.group_by do |robot|
       robot[:fav_food]
     end
-    foods.max_by { |key, value| value.count }.first
+    most_food = foods.max_by { |key, value| value.count }
+    most_food.nil? ? [] : most_food.first
   end
   
   def self.average_salary
     total = dataset.all.reduce(0) do |sum, robot|
       sum + robot[:salary].to_i
     end
-    total / dataset.all.count
+    total.zero? ? [] : total / dataset.all.count
   end
   
   def self.delete_all

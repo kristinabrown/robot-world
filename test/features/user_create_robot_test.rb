@@ -2,7 +2,6 @@ require_relative '../test_helper.rb'
 
 class UserCreateRobotTest < FeatureTest
   def test_user_can_create_robot
-    skip
     visit '/'
     
     click_link_or_button("New Robot")
